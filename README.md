@@ -7,7 +7,7 @@ http://www.codeandweb.com/physicseditor
 
 To get started check out the tutorial I wrote for Ray Wenderlich's Blog:
 
-http://www.codeandweb.com/monkejump
+http://www.codeandweb.com/monkeyjump
 
 It teaches you how to create a complete game from scratch for iOS
 
