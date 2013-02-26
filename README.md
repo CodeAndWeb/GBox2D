@@ -4,7 +4,7 @@ It's not yet complete - e.g. joints are not yet supported.
 
 To get started you can visit Ray Wenderlich's blog and check out my tutorial:
 
-http://www.raywenderlich.com/7261/monkey-jump
+http://www.codeandweb.com/monkejump
 
 It teaches you how to create a complete game from scratch for iOS
 

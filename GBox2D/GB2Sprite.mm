@@ -65,7 +65,7 @@
 {
     b2Vec2 pos = [self physicsPosition];
     b2Vec2 vel = [self linearVelocity];
-	return [NSString stringWithFormat:@"<%@ = %08X | pos:(%f,%f) active=%d awake=%d vel=(%f,%f)>", 
+	return [NSString stringWithFormat:@"<%@ = %8@ | pos:(%f,%f) active=%d awake=%d vel=(%f,%f)>", 
             [self class], 
             self, 
             pos.x, pos.y, 

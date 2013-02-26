@@ -66,8 +66,8 @@
 
 -(void) addEdgeFrom:(b2Vec2)start to:(b2Vec2)end
 {
-    b2PolygonShape edgeShape;
-    edgeShape.SetAsEdge(start, end);
+    b2EdgeShape edgeShape;
+    edgeShape.Set(start, end);
     body->CreateFixture(&edgeShape,0);
 }
 
@@ -101,7 +101,7 @@
 {
     b2Vec2 pos = [self physicsPosition];
     b2Vec2 vel = [self linearVelocity];
-	return [NSString stringWithFormat:@"<%@ = %08X | pos:(%f,%f) active=%d awake=%d vel=(%f,%f)>", 
+	return [NSString stringWithFormat:@"<%@ = %8@ | pos:(%f,%f) active=%d awake=%d vel=(%f,%f)>", 
             [self class], 
             self, 
             pos.x, pos.y, 

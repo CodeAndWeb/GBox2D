@@ -38,14 +38,14 @@
         world = [GB2Engine sharedInstance].world;
 
         // Enable debug draw
-        debugDraw = new GLESDebugDraw( PTM_RATIO * [[CCDirector sharedDirector] contentScaleFactor]);
+        debugDraw = new GLESDebugDraw(PTM_RATIO);
         world->SetDebugDraw(debugDraw);
         
         // Set the flags
         uint32 flags = 0;
-        flags += b2DebugDraw::e_shapeBit;
+        flags += b2Draw::e_shapeBit;
         // flags += b2DebugDraw::e_aabbBit;
-        flags += b2DebugDraw::e_centerOfMassBit;
+        flags += b2Draw::e_centerOfMassBit;
         
         debugDraw->SetFlags(flags);            
     }
@@ -68,18 +68,13 @@
 {
     [super draw];
     
-    // store render state
-	glDisable(GL_TEXTURE_2D);
-	glDisableClientState(GL_COLOR_ARRAY);
-	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    ccGLEnableVertexAttribs(kCCVertexAttribFlag_Position);
+    kmGLPushMatrix();
     
     // draw the world stuff
 	world->DrawDebugData();
+    kmGLPopMatrix();
     
-    // restore render state
-	glEnable(GL_TEXTURE_2D);
-	glEnableClientState(GL_COLOR_ARRAY);
-	glEnableClientState(GL_TEXTURE_COORD_ARRAY);	
 }
 
 @end

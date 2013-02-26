@@ -61,7 +61,8 @@ float PTM_RATIO = 32.0f;
         // set default gravity
         b2Vec2 gravity(0.0f, -10.0f);
         bool doSleep = true;    
-        world = new b2World(gravity, doSleep);
+        world = new b2World(gravity);
+        world->SetAllowSleeping(doSleep);
         
         // get ptmRatio from GB2ShapeCache
         if(GB2_HIGHRES_PHYSICS_SHAPES)
@@ -78,7 +79,7 @@ float PTM_RATIO = 32.0f;
         world->SetContactListener(worldContactListener);    
         
         // schedule update
-        [[CCScheduler sharedScheduler] scheduleUpdateForTarget:self priority:0 paused:NO];
+        [[CCDirector sharedDirector].scheduler scheduleUpdateForTarget:self priority:0 paused:NO];
     }
     return self;
 }
