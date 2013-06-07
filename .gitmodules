@@ -1,0 +1,3 @@
+[submodule "GBox2DX"]
+	path = GBox2DX
+	url = https://github.com/hannon235/GBox2DX.git
